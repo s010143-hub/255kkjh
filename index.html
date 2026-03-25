@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳建均 | 旅遊與生活紀錄</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.7)), url('ddd05330-d445-4afc-bb2e-333890de7c3c.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .travel-card:hover .travel-overlay {
+            opacity: 1;
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* 隱藏捲動條但保留功能 */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- 導覽列 -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="text-2xl font-bold tracking-tighter text-slate-900 flex items-center gap-2">
+                <i class="fa-solid fa-plane-departure text-blue-600"></i>
+                <span>陳建均<span class="text-blue-600">.</span>Travel</span>
+            </div>
+            <div class="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-widest">
+                <a href="#home" class="hover:text-blue-600 transition">首頁</a>
+                <a href="#travel-stats" class="hover:text-blue-600 transition">足跡</a>
+                <a href="#about" class="hover:text-blue-600 transition">關於</a>
+                <a href="#lifestyle" class="hover:text-blue-600 transition">旅誌</a>
+                <a href="#contact" class="hover:text-blue-600 transition">聯絡</a>
+            </div>
+            <button class="md:hidden text-slate-800"><i class="fa-solid fa-bars text-xl"></i></button>
+        </div>
+    </nav>
+
+    <!-- 英雄區塊 (Hero Section) -->
+    <section id="home" class="min-h-screen hero-gradient flex items-center justify-center text-white px-4">
+        <div class="text-center space-y-8 max-w-3xl">
+            <div class="inline-block bg-blue-600/30 backdrop-blur-md border border-white/20 px-4 py-1 rounded-full text-xs font-bold tracking-[0.2em] uppercase mb-4">
+                Explorer & Storyteller
+            </div>
+            <h1 class="text-6xl md:text-8xl font-bold leading-tight">下一站，<br><span class="text-blue-400">未知的美好</span></h1>
+            <p class="text-xl text-slate-200 font-light max-w-xl mx-auto">
+                我是陳建均，一名熱愛旅行與生活的探索者。我用相機記錄山海，用腳步丈量世界。
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center pt-4">
+                <a href="#travel-stats" class="bg-white text-slate-900 px-10 py-4 rounded-full font-bold hover:bg-blue-600 hover:text-white transition duration-300 flex items-center gap-2">
+                    <i class="fa-solid fa-map-location-dot"></i> 我的足跡
+                </a>
+            </div>
+        </div>
+        <!-- 向下捲動提示 -->
+        <div class="absolute bottom-10 animate-bounce">
+            <i class="fa-solid fa-chevron-down text-2xl opacity-50"></i>
+        </div>
+    </section>
+
+    <!-- 旅遊統計 (Travel Stats) -->
+    <section id="travel-stats" class="py-20 bg-white px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="space-y-2">
+                    <div class="text-4xl font-bold text-blue-600">12</div>
+                    <div class="text-slate-500 text-sm uppercase tracking-widest font-bold">造訪國家</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-4xl font-bold text-blue-600">45+</div>
+                    <div class="text-slate-500 text-sm uppercase tracking-widest font-bold">足跡城市</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-4xl font-bold text-blue-600">1,200</div>
+                    <div class="text-slate-500 text-sm uppercase tracking-widest font-bold">快門瞬間</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-4xl font-bold text-blue-600">∞</div>
+                    <div class="text-slate-500 text-sm uppercase tracking-widest font-bold">冒險精神</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 關於我 & 旅遊風格 (About & Travel Style) -->
+    <section id="about" class="py-24 px-4 bg-slate-50 overflow-hidden">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-1/2 relative">
+                <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl rotate-3 hover:rotate-0 transition duration-500">
+                    <img src="ddd05330-d445-4afc-bb2e-333890de7c3c.jpg" alt="陳建均旅途中" class="w-full">
+                </div>
+                <!-- 裝飾郵票風格背景 -->
+                <div class="absolute -top-10 -left-10 w-40 h-40 bg-blue-100 rounded-lg -z-0 opacity-50 flex items-center justify-center text-blue-300 text-7xl">
+                    <i class="fa-solid fa-stamp"></i>
+                </div>
+            </div>
+            <div class="md:w-1/2 space-y-8">
+                <div class="space-y-4">
+                    <h2 class="text-4xl font-bold text-slate-900 italic font-serif text-blue-600">About Me</h2>
+                    <h3 class="text-2xl font-bold">不只是過客，更是故事的收集者。</h3>
+                    <p class="text-slate-600 leading-relaxed text-lg">
+                        對我而言，旅遊不只是從 A 點移動到 B 點，而是一次次與內心的對話。我偏愛在大海邊尋找靜謐，也享受在充滿生活氣息的市井中感受生命力。
+                    </p>
+                </div>
+                
+                <div class="space-y-6">
+                    <h4 class="font-bold text-slate-800 uppercase tracking-widest text-sm flex items-center gap-2">
+                        <span class="w-8 h-px bg-blue-600"></span> 我的旅行清單
+                    </h4>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-white rounded-lg shadow-sm border border-slate-200 text-sm"><i class="fa-solid fa-mountain-sun text-orange-400 mr-2"></i> 山岳健行</span>
+                        <span class="px-4 py-2 bg-white rounded-lg shadow-sm border border-slate-200 text-sm"><i class="fa-solid fa-camera-retro text-slate-500 mr-2"></i> 紀實攝影</span>
+                        <span class="px-4 py-2 bg-white rounded-lg shadow-sm border border-slate-200 text-sm"><i class="fa-solid fa-utensils text-red-400 mr-2"></i> 當地美食</span>
+                        <span class="px-4 py-2 bg-white rounded-lg shadow-sm border border-slate-200 text-sm"><i class="fa-solid fa-water text-blue-400 mr-2"></i> 跳島潛水</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 旅遊誌/格狀展示 (Travel Journal) -->
+    <section id="lifestyle" class="py-24 bg-white px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div class="space-y-2">
+                    <h2 class="text-4xl font-bold text-slate-900">旅行日誌</h2>
+                    <p class="text-slate-500">收集來自世界各個角落的瞬間。</p>
+                </div>
+                <div class="flex gap-4">
+                    <button class="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-900 hover:text-white transition"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button class="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-900 hover:text-white transition"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- 旅日誌卡片 1 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl mb-6 aspect-[4/5] shadow-lg">
+                        <img src="4a6cdac4-2532-4da9-9032-120f0e7fe503.jpg" alt="動物互動" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500 p-8 flex flex-col justify-end text-white">
+                            <span class="text-sm font-bold text-blue-400 mb-2">LOCAL EXPERIENCE</span>
+                            <h4 class="text-2xl font-bold mb-2">療癒的農場之行</h4>
+                            <p class="text-sm text-slate-300">在旅行中放慢腳步，與溫柔的水豚共度慵懶的下午。</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center px-2">
+                        <div>
+                            <h4 class="font-bold text-lg group-hover:text-blue-600 transition">動物之友計畫</h4>
+                            <p class="text-slate-500 text-sm">農場, 2024</p>
+                        </div>
+                        <i class="fa-solid fa-location-dot text-red-500"></i>
+                    </div>
+                </div>
+
+                <!-- 旅日誌卡片 2 -->
+                <div class="group cursor-pointer translate-y-6">
+                    <div class="relative overflow-hidden rounded-2xl mb-6 aspect-[4/5] shadow-lg">
+                        <img src="ddd05330-d445-4afc-bb2e-333890de7c3c.jpg" alt="海邊探索" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500 p-8 flex flex-col justify-end text-white">
+                            <span class="text-sm font-bold text-blue-400 mb-2">COASTAL VIBES</span>
+                            <h4 class="text-2xl font-bold mb-2">聽見海的聲音</h4>
+                            <p class="text-sm text-slate-300">站在世界的盡頭，感受太平洋海風帶來的訊息。</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center px-2">
+                        <div>
+                            <h4 class="font-bold text-lg group-hover:text-blue-600 transition">海岸線流浪日記</h4>
+                            <p class="text-slate-500 text-sm">東部海岸, 2024</p>
+                        </div>
+                        <i class="fa-solid fa-location-dot text-red-500"></i>
+                    </div>
+                </div>
+
+                <!-- 旅日誌卡片 3 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl mb-6 aspect-[4/5] shadow-lg">
+                        <img src="d68fb5b2-cf6e-4668-88cb-3d4553edf44c.jpg" alt="安靜片刻" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500 p-8 flex flex-col justify-end text-white">
+                            <span class="text-sm font-bold text-blue-400 mb-2">MOMENT</span>
+                            <h4 class="text-2xl font-bold mb-2">沈睡的力量</h4>
+                            <p class="text-sm text-slate-300">攝影教我學會等待，等待那個最真實、最靜謐的瞬間。</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center px-2">
+                        <div>
+                            <h4 class="font-bold text-lg group-hover:text-blue-600 transition">光影捕捉</h4>
+                            <p class="text-slate-500 text-sm">紀實攝影, 2024</p>
+                        </div>
+                        <i class="fa-solid fa-location-dot text-red-500"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部旅遊標籤雲 & 聯絡 (Travel Footer) -->
+    <section id="contact" class="bg-slate-900 text-white pt-24 pb-12 px-4 relative overflow-hidden">
+        <!-- 裝飾背景文字 -->
+        <div class="absolute top-0 right-0 text-[15rem] font-bold text-white/5 pointer-events-none select-none -mr-24 -mt-12">TRAVEL</div>
+        
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-16 mb-16">
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-bold">跟我一起去<br><span class="text-blue-500">冒險吧。</span></h2>
+                    <p class="text-slate-400">無論是合作邀約、攝影交流，還是單純想分享旅遊心得，我都非常歡迎。</p>
+                </div>
+                
+                <div class="space-y-6">
+                    <h4 class="text-sm font-bold uppercase tracking-widest text-blue-500">快速導覽</h4>
+                    <ul class="space-y-3 text-slate-400">
+                        <li><a href="#home" class="hover:text-white transition">首頁</a></li>
+                        <li><a href="#about" class="hover:text-white transition">關於陳建均</a></li>
+                        <li><a href="#lifestyle" class="hover:text-white transition">旅行日誌</a></li>
+                        <li><a href="#travel-stats" class="hover:text-white transition">我的足跡</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-6">
+                    <h4 class="text-sm font-bold uppercase tracking-widest text-blue-500">關注我的足跡</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition group">
+                            <i class="fa-brands fa-instagram text-xl group-hover:scale-110 transition"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition group">
+                            <i class="fa-brands fa-facebook-f text-xl group-hover:scale-110 transition"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition group">
+                            <i class="fa-solid fa-envelope text-xl group-hover:scale-110 transition"></i>
+                        </a>
+                    </div>
+                    <div class="pt-4">
+                        <p class="text-xs text-slate-500">Email: jianjun.travel@example.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-12 border-t border-slate-800 text-center text-slate-500 text-xs">
+                <p>&copy; 2024 陳建均 | 探索、記錄、分享。 | Designed with <i class="fa-solid fa-heart text-red-600"></i></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 回到頂端 -->
+    <a href="#home" class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-xl hover:bg-blue-700 transition z-50">
+        <i class="fa-solid fa-paper-plane"></i>
+    </a>
+
+</body>
+</html>
